@@ -1,12 +1,15 @@
 #!/bin/bash
 echo "PlasmaHole: Request flooder"
-echo "PlasmaHole is starting..."
+echo "PlasmaHole version 0.1.1 is starting..."
 sleep 2s
 param=$1
 recipeFile=recipe.txt
 triggerFile=triggers.txt
-userAgent="Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
-timeout=1 
+timeout=1
+userAgent=$2
+if [ "$2" == "" ] ; then
+	userAgent="Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
+fi
 function updRand {
 	let junk1=$RANDOM*32768+$RANDOM
 	let junk2=$RANDOM*32768+$RANDOM
